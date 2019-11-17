@@ -7,22 +7,29 @@
   <title>Fighter.hk</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.1.9/dist/vuetify.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/png" href="img/helmet.png">
 </head>
 <body>
   <div id="app">
     <v-app>
       <v-app-bar class="grey darken-2" dark app clipped-left>
         <router-link to="/" class="app-bar-title">
-          <v-avatar>
-            <img src="img/" alt="site logo" width="48">
+          <v-avatar tile>
+            <img src="img/helmet.png" alt="site logo" width="48">
           </v-avatar>
           <v-toolbar-title class="ml-3">Fighter.hk</v-toolbar-title>
         </router-link>
         <v-spacer></v-spacer>
-        <v-app-bar-nav-icon @click="notHome = !notHome"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       </v-app-bar>
-      <v-navigation-drawer class="grey darken-1" dark app clipped left v-model="notHome">
-        router-nav here
+      <v-navigation-drawer class="grey darken-1" dark app clipped left v-model="drawer">
+        <v-list nav dense>
+          <v-list-item-group>
+            <v-list-item v-for="(group, i) in sections" :key="i">
+              <v-list-item-title v-text="group.title"></v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
       </v-navigation-drawer>
       <v-content>
         <router-view>

@@ -11,6 +11,7 @@ html, body{
 
 .home-grids{
   display: block;
+  text-decoration: none;
 }
 
 .home-grids .v-responsive__content{
