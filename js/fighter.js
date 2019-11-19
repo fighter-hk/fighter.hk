@@ -36,7 +36,7 @@ var notfound = {
   template: '<v-container fluid fill-height>\
     <v-row>\
       <v-col cols="12">\
-        <p class="display-4 text-center">404</p>\
+        <p href="#!" class="display-4 text-center" @click="status = \'777\'">{{ status }}</a>\
         <p class="display-3 text-center">Not Found</p>\
       </v-col>\
     </v-row>\
@@ -61,7 +61,12 @@ var fighter = new Vue(
           },
           {
             path: '/*',
-            component: notfound
+            component: notfound,
+            data(){
+              return {
+                status: '404'
+              }
+            }
           }
         ]
       }
@@ -129,8 +134,13 @@ var fighter = new Vue(
         this.drawer = this.$router.currentRoute.fullPath != '/';
       }
     },
+    watch: {
+      $route (to){
+        to.fullPath === '/' ? this.drawer = false : this.drawer = true;
+     }
+    },
     updated(){
-      this.checkHome();
+      // this.checkHome();
     },
     mounted(){
       this.checkHome();

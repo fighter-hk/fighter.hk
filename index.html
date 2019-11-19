@@ -22,14 +22,16 @@
         <v-spacer></v-spacer>
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       </v-app-bar>
-      <v-navigation-drawer class="grey darken-1" dark app clipped left v-model="drawer">
-        <v-list nav dense>
-          <v-list-item-group>
-            <v-list-item v-for="(group, i) in sections" :key="i">
-              <v-list-item-title v-text="group.title"></v-list-item-title>
+      <v-navigation-drawer class="grey darken-1 pt-1" dark app clipped left v-model="drawer">
+        <div v-for="part in sections" :key="part.icon">
+          <v-list-item-group dark>
+            <p class="subtitle-2 px-3 my-3 font-weight-bold white--text"><v-icon class="mr-3">{{ part.icon }}</v-icon>{{ part.title }}</p>
+            <v-list-item v-for="link in part.grids" :key="link.url" :to="link.url">
+              <v-list-item-content>{{ link.text }}</v-list-item-content>
             </v-list-item>
+            <v-divider></v-divider>
           </v-list-item-group>
-        </v-list>
+        </div>
       </v-navigation-drawer>
       <v-content>
         <router-view>
