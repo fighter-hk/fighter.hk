@@ -1,6 +1,17 @@
 html, body{
   overflow-y: auto;
 }
+.transition{
+  transition: 0.3s;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.clickable:hover, .clickable:focus{
+  filter: blur(4px);
+}
 
 .app-bar-title{
   display: flex;

@@ -9,7 +9,7 @@ var home = {
                     </v-card-title>\
                   </v-card>\
                 </v-col>\
-                <v-col cols="3" v-for="inner in section.grids" :key="inner.url">\
+                <v-col cols="12" sm="6" md="4" lg="3" v-for="inner in section.grids" :key="inner.url">\
                   <router-link :to="inner.url" class="home-grids">\
                     <v-card tile class="d-flex justify-center align-center" dark>\
                       <v-img :src="inner.img" height="250">\
@@ -41,12 +41,17 @@ var inner = {
 var notfound = {
   template: '<v-container fluid fill-height>\
     <v-row>\
-      <v-col cols="12">\
-        <p href="#!" class="display-4 text-center" @click="status = \'777\'">{{ status }}</a>\
+      <v-col cols="12" class="transition" :class="status == 404 ? \'clickable\': \'\'" @click="status = 777">\
+        <p href="#!" class="display-4 text-center">{{ status }}</a>\
         <p class="display-3 text-center">Not Found</p>\
       </v-col>\
     </v-row>\
-  </v-container>'
+  </v-container>',
+  data(){
+    return{
+      status: 404
+    }
+  }
 }
 
 var fighter = new Vue(
@@ -67,10 +72,7 @@ var fighter = new Vue(
           },
           {
             path: '/*',
-            component: notfound,
-            props: {
-              status: '404'
-            }
+            component: notfound
           }
         ]
       }
