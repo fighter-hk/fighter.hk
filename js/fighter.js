@@ -84,11 +84,13 @@ var fighter = new Vue(
     methods:{
       checkHome: function(){
         this.drawer = this.$router.currentRoute.fullPath != '/';
+        this.$vuetify.breakpoint.width < 1264 ? this.drawer = false: '';
       }
     },
     watch: {
       $route (to){
         to.fullPath === '/' ? this.drawer = false : this.drawer = true;
+        this.$vuetify.breakpoint.width < 1264 ? this.drawer = false: '';
      }
     },
     updated(){
