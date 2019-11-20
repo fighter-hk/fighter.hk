@@ -24,7 +24,7 @@
       </v-app-bar>
       <v-navigation-drawer class="grey darken-1 pt-1" dark app clipped left v-model="drawer">
         <div v-for="part in sections" :key="part.icon">
-          <v-list-item-group dark>
+          <v-list-item-group color="yellow accent-3">
             <p class="subtitle-2 px-3 my-3 font-weight-bold white--text"><v-icon class="mr-3">{{ part.icon }}</v-icon>{{ part.title }}</p>
             <v-list-item v-for="link in part.grids" :key="link.url" :to="link.url">
               <v-list-item-content>{{ link.text }}</v-list-item-content>
@@ -43,6 +43,7 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js" integrity="sha256-chlNFSVx3TdcQ2Xlw7SvnbLAavAQLO0Y/LBiWX04viY=" crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue-router@3.1.3/dist/vue-router.min.js" integrity="sha256-r/vPIUvTobCpYZsMmvU7HM58cNd4D6/vdICqDFapV7Y=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.1.9/dist/vuetify.min.js" integrity="sha256-icut6WA4UVFDGKs+3iQ3a/hUqoCn1u+7PKfwQkHc9co=" crossorigin="anonymous"></script>
+  <script src="js/data.js" charset="utf-8"></script>
   <script src="js/fighter.js" charset="utf-8"></script>
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
 </body>

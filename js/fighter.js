@@ -19,14 +19,20 @@ var home = {
                   </router-link>\
                 </v-col>\
               </v-row>\
-            </v-container>'
+            </v-container>',
+  data(){
+    return{
+      sections: data.sections
+    }
+  }
 }
 
 var inner = {
+  props: ['page'],
   template: '<v-container fluid fill-height class="grey lighten-1">\
     <v-row>\
       <v-col cols="12">\
-        <v-card class="pa-3">inner demo</v-card>\
+        <v-card class="pa-3">inner {{ page }}</v-card>\
       </v-col>\
     </v-row>\
   </v-container>'
@@ -52,20 +58,18 @@ var fighter = new Vue(
         routes: [
           {
             path: '/',
-            component: home,
-            props: this.sections
+            component: home
           },
           {
-            path: '/inner/:url',
-            component: inner
+            path: '/inner/:page',
+            component: inner,
+            props: true
           },
           {
             path: '/*',
             component: notfound,
-            data(){
-              return {
-                status: '404'
-              }
+            props: {
+              status: '404'
             }
           }
         ]
@@ -73,60 +77,7 @@ var fighter = new Vue(
     ),
     data: {
       drawer: false,
-      sections: [
-        {
-          title: '工具合集',
-          icon: 'mdi-toolbox',
-          grids: [
-            {
-              url: '/inner/live',
-              img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-              text: '直播'
-            },
-            {
-              url: '/inner/timetable',
-              img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-              text: '日程'
-            },
-            {
-              url: '/inner/yellow-blue',
-              img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-              text: '黃藍'
-            },
-            {
-              url: '/inner/popo',
-              img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-              text: '黑警'
-            },
-            {
-              url: '/inner/map',
-              img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-              text: '地圖'
-            }
-          ]
-        },
-        {
-          title: '被捕須知',
-          icon: 'mdi-charity',
-          grids: [
-            {
-              url: '/inner/arrested',
-              img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-              text: '我俾狗咬'
-            },
-            {
-              url: '/inner/help-friend',
-              img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-              text: 'Friend俾狗咬'
-            },
-            {
-              url: '/inner/help-family',
-              img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-              text: '家人俾狗咬'
-            }
-          ]
-        }
-      ]
+      sections: data.sections
     },
     methods:{
       checkHome: function(){
