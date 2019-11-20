@@ -83,7 +83,6 @@ var fighter = new Vue(
     },
     methods:{
       checkHome: function(){
-        console.error(this.$router.currentRoute.fullPath != '/');
         this.drawer = this.$router.currentRoute.fullPath != '/';
       }
     },
