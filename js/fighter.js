@@ -32,10 +32,15 @@ var inner = {
   template: '<v-container fluid fill-height class="grey lighten-1">\
     <v-row>\
       <v-col cols="12">\
-        <v-card class="pa-3">inner {{ page }}</v-card>\
+        <v-card class="pa-3">{{ loop.page }}</v-card>\
       </v-col>\
     </v-row>\
-  </v-container>'
+  </v-container>',
+  data(){
+    return{
+      loop: data.detail
+    }
+  }
 }
 
 var notfound = {

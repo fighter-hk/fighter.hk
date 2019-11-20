@@ -6,28 +6,59 @@ data.sections = [
     grids: [
       {
         url: '/inner/live',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-        text: '直播'
+        img: 'img/live-broadcasting.jpg',
+        text: '直播整合',
       },
       {
         url: '/inner/timetable',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+        img: 'img/calendar.jpg',
         text: '日程'
       },
       {
-        url: '/inner/yellow-blue',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+        url: '/inner/yellowblue',
+        img: 'img/wonglaam.png',
         text: '黃藍'
       },
       {
         url: '/inner/popo',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+        img: 'img/black-police.jpeg',
         text: '黑警'
       },
       {
         url: '/inner/map',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+        img: 'img/maps.png',
         text: '地圖'
+      },
+      {
+        url: '/inner/tools',
+        img: 'img/toolbox.jpg',
+        text: '工具整合'
+      }
+    ]
+  },
+  {
+    title: '消息渠道',
+    icon: 'mdi-bullhorn',
+    grids: [
+      {
+        url: '/inner/news',
+        img: 'img/true-news.png',
+        text: '新聞'
+      },
+      {
+        url: '/inner/telegram',
+        img: 'img/telegram.png',
+        text: 'Telegram 頻道'
+      },
+      {
+        url: '/inner/twitter',
+        img: 'img/twitter.jpg',
+        text: 'Twitter 戰線'
+      },
+      {
+        url: '/inner/facebook',
+        img: 'img/facebook.png',
+        text: 'Facebook 專頁'
       }
     ]
   },
@@ -37,19 +68,40 @@ data.sections = [
     grids: [
       {
         url: '/inner/arrested',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+        img: 'img/arrest-1.jpg',
         text: '我俾狗咬'
       },
       {
         url: '/inner/help-friend',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-        text: 'Friend俾狗咬'
+        img: 'img/arrest-2.jpeg',
+        text: 'Friend 俾狗咬'
       },
       {
         url: '/inner/help-family',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+        img: 'img/family-planning.jpg',
         text: '家人俾狗咬'
       }
     ]
   }
 ];
+
+data.detail = {
+  live: [
+    {
+      name: '反送中直播台 NCE Live',
+      url: 'https://ncehk2019.github.io/nce-live/',
+      note: ''
+    },
+    {
+      name: '反送中綜合直播台 FreeHKLive',
+      url: 'https://freehk.live/',
+      note: ''
+    }
+  ],
+  map: [
+
+  ],
+  yellowblue: [
+
+  ]
+}
