@@ -29,16 +29,26 @@ var home = {
 
 var inner = {
   props: ['page'],
-  template: '<v-container fluid fill-height class="grey lighten-1">\
+  template: '<v-container fluid fill-height class="grey lighten-1 align-start">\
     <v-row>\
       <v-col cols="12">\
-        <v-card class="pa-3">{{ loop.page }}</v-card>\
+        <v-card class="pa-3 mb-3" v-for="loop in pageName">\
+          <v-card-title class="pa-0">{{ loop.name }}\
+          <v-card-text class="px-0"><a :href="loop.url" rel="noopener" target="_blank">{{ loop.url }}</a></v-card-text>\
+          <v-card-text class="px-0" v-if="loop.note.length > 0">{{ loop.note }}</v-card-text>\
+        </v-card>\
       </v-col>\
     </v-row>\
   </v-container>',
   data(){
     return{
       loop: data.detail
+    }
+  },
+  computed:{
+    pageName(){
+      var temp = this.page.toString();
+      return this.loop.live; //need change
     }
   }
 }
